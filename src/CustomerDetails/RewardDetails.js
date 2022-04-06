@@ -4,7 +4,7 @@ function RewardDetails(props) {
     const [customerMonthlyRewards, setmonthlyRewards] = useState([]);
     const { customerTransactions } = props;
 
-    // Assuming January, February and March trasactions
+    // currently i'm Assuming January, February and March trasactions
     useEffect(() => {
         let customerRecords = []
         let janRewards = 0;
@@ -28,7 +28,7 @@ function RewardDetails(props) {
                             break;
                     }
                 })
-                customerRecords.push( {
+                customerRecords.push({
                     name: customerTransactions[key].customerName,
                     memberShipCode: customerTransactions[key].memeberShip,
                     january: janRewards,
@@ -41,8 +41,9 @@ function RewardDetails(props) {
         }
     }, [customerTransactions])
 
+    // Calculate the rewards based on amount
     const getMonthlyRewards = (trans, monthlyRewards) => {
-        let trasnAmount = Number(trans.transactionAmount);
+        let trasnAmount = Math.round(Number(trans.transactionAmount));
         if (trasnAmount >= 100) {
             let overAmount = trasnAmount - 100;
             monthlyRewards = monthlyRewards + 50;
@@ -57,9 +58,9 @@ function RewardDetails(props) {
 
     return (
         <>
-        {customerMonthlyRewards && customerMonthlyRewards.length > 0 &&        <CustomerDetails details = {customerMonthlyRewards} />}
+            {customerMonthlyRewards && customerMonthlyRewards.length > 0 && <CustomerDetails details={customerMonthlyRewards} />}
         </>
-       
+
     )
 }
 
