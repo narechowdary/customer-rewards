@@ -1,10 +1,4 @@
-export const customer_Details = {
-    name: 'Scott Travis',
-    membership: 'AXJ9574590',
-    age: '32',
-    dateOfBirth: '09/05/1990'
-}
-
+// Members list
 export const membersList = [
     {
         name: 'David Warner',
@@ -20,8 +14,8 @@ export const membersList = [
     }
 ]
 
-// taking all customers transactions from hard coded data
-export const Customer_1_Transactions = [
+// Member transactions
+export const customer_1_Transactions = [
     {
         transactionDate: '01/12/2022',
         transactionAmount: '80',
@@ -64,7 +58,7 @@ export const Customer_1_Transactions = [
     }
 ]
 
-export const Customer_2_Transactions = [
+export const customer_2_Transactions = [
     {
         transactionDate: '02/12/2021',
         transactionAmount: '50',
@@ -107,7 +101,7 @@ export const Customer_2_Transactions = [
     }
 ]
 
-export const Customer_3_Transactions = [
+export const customer_3_Transactions = [
     {
         transactionDate: '01/12/2021',
         transactionAmount: '50',
